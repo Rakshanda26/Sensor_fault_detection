@@ -1,2 +1,14 @@
 pymongo
 pandas
+numpy
+Flask
+gunicorn
+sklearn
+PyYAML
+evidently
+dill
+matplotlib
+six
+evidently
+dill
+-e .
