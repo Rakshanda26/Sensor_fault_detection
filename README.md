@@ -44,7 +44,7 @@ git config --global user.email rakshandamm123@gmail.com
 
 git config --global user.name Rakshanda26
  
- git push origin main -f 
+git push origin main -f 
 
 git add .
  
