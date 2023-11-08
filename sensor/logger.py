@@ -6,6 +6,7 @@ import os
 LOG_FILE = f"{datetime.now().strftime('%m_%d_%Y_%H_%M_%S')}.log"
 
 #created path for LOGS folder
+# Log_File_dir created
 logs_path = os.path.join(os.getcwd(), "logs", LOG_FILE)
 
 # Created dor for logs
