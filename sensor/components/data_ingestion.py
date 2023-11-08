@@ -19,6 +19,7 @@ class DataIngestion:
 
     def initiate_data_ingestion(self,)->artifact_entity.DataIngestionArtifact:
         try:
+            logging.info(f"{'>>'*20} Data Ingestion {'<<'*20}")
             #Exporting collection data to pandas dataframe.
             df:pd.DataFrame =utils.get_collection_as_dataframe(
                 database_name=self.data_ingestion_config.database_name,

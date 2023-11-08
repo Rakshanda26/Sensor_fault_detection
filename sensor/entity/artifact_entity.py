@@ -6,6 +6,9 @@ class DataIngestionArtifact:
     train_file_path:str
     test_file_path:str
 
+@dataclass()
+class DataValidationAritfact:
+    report_file_path:str
 
-class DataValidationAritfact:...
+
 class DataTransformationArtifact:...
