@@ -80,6 +80,8 @@ class DataValidation:
             for base_column in base_columns:
                 base_data,current_data = base_df[base_column],current_df[base_column]
                 # Null hypothesis is that both column data drawn from same distribution
+
+                logging.info(f" Hypothesis {base_column}: {base_data.dtype}, {current_data.dtype}")
                 same_distribution = stats.ks_2samp(base_data,current_data)
 
                 if same_distribution.pvalue>0.05:
@@ -119,6 +121,12 @@ class DataValidation:
             train_df = self.drop_missing_values_columns(df=train_df,report_key_name="missing_values_within_train_dataset")
             logging.info(f"Drop null values columns from test df ")
             test_df = self.drop_missing_values_columns(df=test_df,report_key_name="missing_values_within_test_dataset")
+
+            exclude_columns=["class"]
+            base_df = utils.convert_columns_float(df=base_df, exclude_columns=exclude_columns)
+            train_df = utils.convert_columns_float(df=train_df, exclude_columns=exclude_columns)
+            test_df = utils.convert_columns_float(df=test_df, exclude_columns=exclude_columns)
+
 
             logging.info(f"Is all required columns present in train df ")
             train_df_column_status= self.is_required_columns_exists(base_df=base_df, curr_df=train_df,report_key_name="missing_columns_within_train_dataset")
